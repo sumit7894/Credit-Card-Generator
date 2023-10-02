@@ -1,0 +1,100 @@
+@import "https://fonts.googleapis.com/css?family=Inter";
+@import "https://fonts.googleapis.com/css?family=Roboto";
+.html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  flex-direction: row;
+  display: flex;
+}
+
+.left {
+  background-image: linear-gradient(169.47deg, #041f1bfa 14.76%, #380c4a 25.62%, #3b0e46 29.25%, #3d0f42 33.37%, #441436 40.15%, #33254e 46.18%, #2b2d59 52.47%, #292654 57.59%, #271f4f 62.33%, #240d37 74.06%, #22052d 88.22% 125.39%, #22052d 154.65% 154.67%), radial-gradient(26.86% 9.25% at 52.64% 24.47%, #4e1a4533 0%, #45142b33 14.29% 28.57%, #3d0e1233 42.86%, #3d0d0f33 57.14% 71.43%, #3d0d0f33 85.71%, #3c0d0d33 100%);
+  width: 40%;
+  height: 100vh;
+}
+
+.right {
+  background-color: #d9d9d9;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  display: flex;
+}
+
+.grouped {
+  flex-direction: row;
+  display: flex;
+}
+
+.title {
+  color: #404040;
+  letter-spacing: .12em;
+  margin: 8px;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 14px;
+  display: block;
+}
+
+.error {
+  color: red;
+  height: 20px;
+  font-family: Inter;
+  display: block;
+}
+
+input {
+  background-color: #d9d9d9;
+  border: 1px solid #bbb9bc;
+  border-radius: 6px;
+  height: 35px;
+}
+
+::placeholder {
+  color: #bbb9bc;
+  padding: 5px;
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.inputName, .inputNumber {
+  width: 340px;
+}
+
+.inputMonth {
+  width: 70px;
+}
+
+.inputYear {
+  width: 70px;
+  margin-left: 15px;
+}
+
+.inputCvc {
+  width: 150px;
+}
+
+.cvc {
+  margin-left: 10px;
+}
+
+.buttonConfirm {
+  text-align: center;
+  color: #fff;
+  background-color: #220930;
+  border-radius: 6px;
+  align-items: center;
+  width: 360px;
+  height: 45px;
+  margin-top: 10px;
+  font-family: Inter;
+  font-size: 15px;
+}
+
+/*# sourceMappingURL=index.a0bde794.css.map */
