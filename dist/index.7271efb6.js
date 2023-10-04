@@ -2947,275 +2947,43 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-var _s = $RefreshSig$();
+var _body = require("./Body");
+var _bodyDefault = parcelHelpers.interopDefault(_body);
+var _cardFront = require("./CardFront");
+var _cardFrontDefault = parcelHelpers.interopDefault(_cardFront);
+var _cardBack = require("./CardBack");
+var _cardBackDefault = parcelHelpers.interopDefault(_cardBack);
 const Container = ()=>{
-    _s();
-    const [name, setName] = (0, _react.useState)("");
-    const [cardNumber, setCardNumber] = (0, _react.useState)("");
-    const [month, setMonth] = (0, _react.useState)("");
-    const [year, setYear] = (0, _react.useState)("");
-    const [cvc, setCvc] = (0, _react.useState)("");
-    const [errors, setErrors] = (0, _react.useState)({
-        name: "",
-        cardNumber: "",
-        date: "",
-        cvc: ""
-    });
-    const handleSubmit = (e)=>{
-        let pattern = /[a-zA-Z]/;
-        e.preventDefault();
-        let newErrors = {};
-        //validation for name
-        if (name.trim() === "") newErrors.name = "Card holder name required";
-        else if (/\d/.test(name)) newErrors.name = "Card holder name cannot take numbers";
-        //validation for number
-        if (cardNumber.trim() === "") newErrors.cardNumber = "Card number required";
-        else if (pattern.test(cardNumber)) newErrors.cardNumber = "Card number should be numeric";
-        //validation for month
-        if (month.trim() === "") newErrors.date = "Month required";
-        else if (year.trim() == "") newErrors.date = "Year required";
-        else if (month > 12 && month < 1) newErrors.date = "Invalid month";
-        else if (year < 23) newErrors.date = "Invalid year";
-        //validation for cvc
-        if (cvc.trim() === "") newErrors.cvc = "CVC required";
-        else if (pattern.test(cvc)) newErrors.cvc = "CVC must be numeric";
-        else if (cvc.length > 3) newErrors.cvc = "CVC must be 3 digit";
-        setErrors(newErrors);
-    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "container",
+        className: "app",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "left"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardBackDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 59,
+                lineNumber: 9,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "right",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "formContainer",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                        onSubmit: handleSubmit,
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "card-details",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        for: "name",
-                                        className: "title",
-                                        children: "CARD HOLDER NAME"
-                                    }, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 64,
-                                        columnNumber: 11
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                        type: "text",
-                                        className: "inputName",
-                                        placeholder: "e.g. Jane Appleseed",
-                                        value: name,
-                                        onChange: (e)=>{
-                                            setName(e.target.value);
-                                        }
-                                    }, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 65,
-                                        columnNumber: 11
-                                    }, undefined),
-                                    " ",
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 67,
-                                        columnNumber: 22
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "error",
-                                        children: errors.name
-                                    }, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 68,
-                                        columnNumber: 11
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        for: "cc-number",
-                                        className: "title",
-                                        children: "CARD NUMBER"
-                                    }, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 69,
-                                        columnNumber: 11
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                        type: "numeric",
-                                        className: "inputNumber",
-                                        placeholder: "e.g. 1234 5678 9123 0000",
-                                        value: cardNumber,
-                                        onChange: (e)=>{
-                                            setCardNumber(e.target.value);
-                                        }
-                                    }, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 70,
-                                        columnNumber: 11
-                                    }, undefined),
-                                    " ",
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 71,
-                                        columnNumber: 166
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "error",
-                                        children: errors.cardNumber
-                                    }, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 72,
-                                        columnNumber: 11
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/App.js",
-                                lineNumber: 63,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "grouped",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "exp-date",
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                                className: "title",
-                                                children: "EXP. DATE (MM/YY)"
-                                            }, void 0, false, {
-                                                fileName: "src/App.js",
-                                                lineNumber: 76,
-                                                columnNumber: 11
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                                type: "numeric",
-                                                className: "inputMonth",
-                                                placeholder: "MM",
-                                                value: month,
-                                                onChange: (e)=>{
-                                                    setMonth(e.target.value);
-                                                }
-                                            }, void 0, false, {
-                                                fileName: "src/App.js",
-                                                lineNumber: 77,
-                                                columnNumber: 11
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                                type: "numeric",
-                                                className: "inputYear",
-                                                placeholder: "YY",
-                                                value: year,
-                                                onChange: (e)=>{
-                                                    setYear(e.target.value);
-                                                }
-                                            }, void 0, false, {
-                                                fileName: "src/App.js",
-                                                lineNumber: 79,
-                                                columnNumber: 11
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                className: "error",
-                                                children: errors.date
-                                            }, void 0, false, {
-                                                fileName: "src/App.js",
-                                                lineNumber: 81,
-                                                columnNumber: 11
-                                            }, undefined)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 75,
-                                        columnNumber: 11
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "cvc",
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                                className: "title",
-                                                children: "CVC"
-                                            }, void 0, false, {
-                                                fileName: "src/App.js",
-                                                lineNumber: 84,
-                                                columnNumber: 11
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                                type: "numeric",
-                                                className: "inputCvc",
-                                                placeholder: "e.g. 123",
-                                                value: cvc,
-                                                onChange: (e)=>{
-                                                    setCvc(e.target.value);
-                                                }
-                                            }, void 0, false, {
-                                                fileName: "src/App.js",
-                                                lineNumber: 85,
-                                                columnNumber: 11
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                className: "error",
-                                                children: errors.cvc
-                                            }, void 0, false, {
-                                                fileName: "src/App.js",
-                                                lineNumber: 87,
-                                                columnNumber: 11
-                                            }, undefined)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 83,
-                                        columnNumber: 11
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/App.js",
-                                lineNumber: 74,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                type: "submit",
-                                className: "buttonConfirm",
-                                children: "Confirm"
-                            }, void 0, false, {
-                                fileName: "src/App.js",
-                                lineNumber: 90,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/App.js",
-                        lineNumber: 62,
-                        columnNumber: 9
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/App.js",
-                    lineNumber: 61,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardFrontDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 60,
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
+                fileName: "src/App.js",
+                lineNumber: 11,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 58,
+        lineNumber: 8,
         columnNumber: 5
     }, undefined);
 };
-_s(Container, "oQfZDYVj+LWt1rXke5bcXwdjqdc=");
 _c = Container;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Container, {}, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 99,
+    lineNumber: 17,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -3226,7 +2994,7 @@ $RefreshReg$(_c, "Container");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Body":"5pK3b","./CardFront":"kTB10","./CardBack":"i3xnj"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -28043,6 +27811,649 @@ module.exports = require("9e039173d01172ab");
     exports.setSignature = setSignature;
 })();
 
-},{}]},["hcwwj","1xC6H","2kQhy"], "2kQhy", "parcelRequire5f43")
+},{}],"5pK3b":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5d06 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5d06.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _client = require("react-dom/client");
+var _cardFront = require("./CardFront");
+var _cardFrontDefault = parcelHelpers.interopDefault(_cardFront);
+var _cardBack = require("./CardBack");
+var _cardBackDefault = parcelHelpers.interopDefault(_cardBack);
+var _s = $RefreshSig$();
+const Body = ()=>{
+    _s();
+    const [name, setName] = (0, _react.useState)("");
+    const [cardNumber, setCardNumber] = (0, _react.useState)("");
+    const [month, setMonth] = (0, _react.useState)("");
+    const [year, setYear] = (0, _react.useState)("");
+    const [cvc, setCvc] = (0, _react.useState)("");
+    const [validationError, setValidationError] = (0, _react.useState)(false);
+    const [sendName, setSendName] = (0, _react.useState)("");
+    const [sendNumber, setSendNumber] = (0, _react.useState)("");
+    const [sendMonth, setSendMonth] = (0, _react.useState)("");
+    const [sendYear, setSendYear] = (0, _react.useState)("");
+    const [sendCvc, setSendCvc] = (0, _react.useState)("");
+    const [errors, setErrors] = (0, _react.useState)({
+        name: "",
+        cardNumber: "",
+        date: "",
+        cvc: ""
+    });
+    let newErrors = {};
+    let flag = false;
+    const handleSubmit = (e)=>{
+        let pattern = /[a-zA-Z]/;
+        e.preventDefault();
+        //validation for name
+        if (name.trim() === "") {
+            newErrors.name = "Card holder name required";
+            setValidationError(true);
+        } else if (/\d/.test(name)) {
+            newErrors.name = "Card holder name cannot take numbers";
+            setValidationError(true);
+        }
+        //validation for number
+        if (cardNumber.trim() === "") {
+            newErrors.cardNumber = "Card number required";
+            setValidationError(true);
+        } else if (pattern.test(cardNumber)) {
+            newErrors.cardNumber = "Card number should be numeric";
+            setValidationError(true);
+        }
+        //validation for month
+        if (month.trim() === "") newErrors.date = "Month required";
+        else if (year.trim() == "") newErrors.date = "Year required";
+        else if (pattern.test(month)) newErrors.date = "Month must be numeric";
+        else if (pattern.test(year)) newErrors.date = "Year must be numeric";
+        else if (year < 23 || month > 12 && month < 1) newErrors.date = "Invalid year or month";
+        //validation for cvc
+        if (cvc.trim() === "") newErrors.cvc = "CVC required";
+        else if (pattern.test(cvc)) newErrors.cvc = "CVC must be numeric";
+        else if (cvc.length > 3) newErrors.cvc = "CVC must be 3 digit";
+        setErrors(newErrors);
+        if (Object.keys(newErrors).length === 0) {
+            setSendName(name.toUpperCase());
+            setSendNumber(cardNumber.replace(/(\d{4})/g, "$1 ").trim());
+            setSendMonth(month);
+            setSendYear(year);
+            setSendCvc(cvc);
+        }
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "left"
+            }, void 0, false, {
+                fileName: "src/Body.js",
+                lineNumber: 85,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "right",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "formContainer",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                        onSubmit: handleSubmit,
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "card-details",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        for: "name",
+                                        className: "title",
+                                        children: "CARD HOLDER NAME"
+                                    }, void 0, false, {
+                                        fileName: "src/Body.js",
+                                        lineNumber: 90,
+                                        columnNumber: 11
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        className: "inputName",
+                                        placeholder: "e.g. Jane Appleseed",
+                                        value: name,
+                                        onChange: (e)=>{
+                                            setName(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "src/Body.js",
+                                        lineNumber: 91,
+                                        columnNumber: 11
+                                    }, undefined),
+                                    " ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                        fileName: "src/Body.js",
+                                        lineNumber: 93,
+                                        columnNumber: 20
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "error",
+                                        children: errors.name
+                                    }, void 0, false, {
+                                        fileName: "src/Body.js",
+                                        lineNumber: 94,
+                                        columnNumber: 11
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        for: "cc-number",
+                                        className: "title",
+                                        children: "CARD NUMBER"
+                                    }, void 0, false, {
+                                        fileName: "src/Body.js",
+                                        lineNumber: 95,
+                                        columnNumber: 11
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "numeric",
+                                        className: "inputNumber",
+                                        placeholder: "e.g. 1234 5678 9123 0000",
+                                        value: cardNumber,
+                                        onChange: (e)=>{
+                                            setCardNumber(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "src/Body.js",
+                                        lineNumber: 96,
+                                        columnNumber: 11
+                                    }, undefined),
+                                    " ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                        fileName: "src/Body.js",
+                                        lineNumber: 97,
+                                        columnNumber: 166
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "error",
+                                        children: errors.cardNumber
+                                    }, void 0, false, {
+                                        fileName: "src/Body.js",
+                                        lineNumber: 98,
+                                        columnNumber: 11
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Body.js",
+                                lineNumber: 89,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "grouped",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "exp-date",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                                className: "title",
+                                                children: "EXP. DATE (MM/YY)"
+                                            }, void 0, false, {
+                                                fileName: "src/Body.js",
+                                                lineNumber: 102,
+                                                columnNumber: 11
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                type: "numeric",
+                                                className: "inputMonth",
+                                                placeholder: "MM",
+                                                value: month,
+                                                onChange: (e)=>{
+                                                    setMonth(e.target.value);
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "src/Body.js",
+                                                lineNumber: 103,
+                                                columnNumber: 11
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                type: "numeric",
+                                                className: "inputYear",
+                                                placeholder: "YY",
+                                                value: year,
+                                                onChange: (e)=>{
+                                                    setYear(e.target.value);
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "src/Body.js",
+                                                lineNumber: 105,
+                                                columnNumber: 11
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "error",
+                                                children: errors.date
+                                            }, void 0, false, {
+                                                fileName: "src/Body.js",
+                                                lineNumber: 107,
+                                                columnNumber: 11
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/Body.js",
+                                        lineNumber: 101,
+                                        columnNumber: 11
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "cvc",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                                className: "title",
+                                                children: "CVC"
+                                            }, void 0, false, {
+                                                fileName: "src/Body.js",
+                                                lineNumber: 110,
+                                                columnNumber: 11
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                type: "numeric",
+                                                className: "inputCvc",
+                                                placeholder: "e.g. 123",
+                                                value: cvc,
+                                                onChange: (e)=>{
+                                                    setCvc(e.target.value);
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "src/Body.js",
+                                                lineNumber: 111,
+                                                columnNumber: 11
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "error",
+                                                children: errors.cvc
+                                            }, void 0, false, {
+                                                fileName: "src/Body.js",
+                                                lineNumber: 113,
+                                                columnNumber: 11
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/Body.js",
+                                        lineNumber: 109,
+                                        columnNumber: 11
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Body.js",
+                                lineNumber: 100,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                type: "submit",
+                                className: "buttonConfirm",
+                                children: "Confirm"
+                            }, void 0, false, {
+                                fileName: "src/Body.js",
+                                lineNumber: 116,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardFrontDefault.default), {
+                                name: sendName,
+                                number: sendNumber,
+                                month: sendMonth,
+                                year: sendYear
+                            }, void 0, false, {
+                                fileName: "src/Body.js",
+                                lineNumber: 117,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardBackDefault.default), {
+                                cvc: sendCvc
+                            }, void 0, false, {
+                                fileName: "src/Body.js",
+                                lineNumber: 119,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Body.js",
+                        lineNumber: 88,
+                        columnNumber: 9
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/Body.js",
+                    lineNumber: 87,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Body.js",
+                lineNumber: 86,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Body.js",
+        lineNumber: 84,
+        columnNumber: 5
+    }, undefined);
+};
+_s(Body, "Hw4rAZSElMo8D0fPTVWbtJgCJy4=");
+_c = Body;
+exports.default = Body;
+var _c;
+$RefreshReg$(_c, "Body");
+
+  $parcel$ReactRefreshHelpers$5d06.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./CardFront":"kTB10","./CardBack":"i3xnj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kTB10":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2b4a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2b4a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+const CardFront = (props)=>{
+    _s();
+    const { name, number, month, year } = props;
+    const [personName, setPersonName] = (0, _react.useState)(name || "sumit");
+    const [cardNumber, setCardNumber] = (0, _react.useState)(number || "0000 0000 0000 0000");
+    const [expMonth, setExpMonth] = (0, _react.useState)(month || "00");
+    const [expYear, setExpYear] = (0, _react.useState)(year || "00");
+    (0, _react.useEffect)(()=>{
+        setPersonName(name || "Jane Appleseed");
+    }, [
+        name
+    ]);
+    (0, _react.useEffect)(()=>{
+        setCardNumber(number || "0000 0000 0000 0000");
+    }, [
+        number
+    ]);
+    (0, _react.useEffect)(()=>{
+        setExpMonth(month || "00");
+    }, [
+        month
+    ]);
+    (0, _react.useEffect)(()=>{
+        setExpYear(year || "00");
+    }, [
+        year
+    ]);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "card-container-front",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "circle"
+            }, void 0, false, {
+                fileName: "src/CardFront.js",
+                lineNumber: 24,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "circle-small"
+            }, void 0, false, {
+                fileName: "src/CardFront.js",
+                lineNumber: 25,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "card-number-container",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "card-number",
+                    children: cardNumber
+                }, void 0, false, {
+                    fileName: "src/CardFront.js",
+                    lineNumber: 27,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/CardFront.js",
+                lineNumber: 26,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "div-name",
+                children: personName
+            }, void 0, false, {
+                fileName: "src/CardFront.js",
+                lineNumber: 29,
+                columnNumber: 13
+            }, undefined),
+            console.log(name),
+            ";",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "div-date",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "div-month",
+                        children: expMonth
+                    }, void 0, false, {
+                        fileName: "src/CardFront.js",
+                        lineNumber: 31,
+                        columnNumber: 39
+                    }, undefined),
+                    "/",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "div-year",
+                        children: expYear
+                    }, void 0, false, {
+                        fileName: "src/CardFront.js",
+                        lineNumber: 33,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/CardFront.js",
+                lineNumber: 31,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "ellipse"
+            }, void 0, false, {
+                fileName: "src/CardFront.js",
+                lineNumber: 35,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "ellipseOne"
+            }, void 0, false, {
+                fileName: "src/CardFront.js",
+                lineNumber: 36,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "ellipseTwo"
+            }, void 0, false, {
+                fileName: "src/CardFront.js",
+                lineNumber: 37,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "ellipseThree"
+            }, void 0, false, {
+                fileName: "src/CardFront.js",
+                lineNumber: 38,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/CardFront.js",
+        lineNumber: 23,
+        columnNumber: 9
+    }, undefined);
+};
+_s(CardFront, "s5WiszZqf+83tgDoBUyAyPJN5l0=");
+_c = CardFront;
+exports.default = CardFront;
+var _c;
+$RefreshReg$(_c, "CardFront");
+
+  $parcel$ReactRefreshHelpers$2b4a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"i3xnj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2253 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2253.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+const CardBack = (props)=>{
+    _s();
+    const { cvc } = props;
+    const [cardCvc, setCardCvc] = (0, _react.useState)(cvc || "00");
+    (0, _react.useEffect)(()=>{
+        setCardCvc(cvc || "00");
+    }, [
+        cvc
+    ]);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "card-container-back",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "black-tape"
+            }, void 0, false, {
+                fileName: "src/CardBack.js",
+                lineNumber: 10,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "cvc-div",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "cvc-number",
+                    children: cvc || "000"
+                }, void 0, false, {
+                    fileName: "src/CardBack.js",
+                    lineNumber: 11,
+                    columnNumber: 38
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/CardBack.js",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "line-one"
+                    }, void 0, false, {
+                        fileName: "src/CardBack.js",
+                        lineNumber: 13,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "line-two"
+                    }, void 0, false, {
+                        fileName: "src/CardBack.js",
+                        lineNumber: 14,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "line-three"
+                    }, void 0, false, {
+                        fileName: "src/CardBack.js",
+                        lineNumber: 15,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "line-four"
+                    }, void 0, false, {
+                        fileName: "src/CardBack.js",
+                        lineNumber: 16,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "line-five"
+                    }, void 0, false, {
+                        fileName: "src/CardBack.js",
+                        lineNumber: 17,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "line-six"
+                    }, void 0, false, {
+                        fileName: "src/CardBack.js",
+                        lineNumber: 18,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "line-seven"
+                    }, void 0, false, {
+                        fileName: "src/CardBack.js",
+                        lineNumber: 19,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "line-eight"
+                    }, void 0, false, {
+                        fileName: "src/CardBack.js",
+                        lineNumber: 20,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "line-nine"
+                    }, void 0, false, {
+                        fileName: "src/CardBack.js",
+                        lineNumber: 21,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "line-ten"
+                    }, void 0, false, {
+                        fileName: "src/CardBack.js",
+                        lineNumber: 22,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "line-eleven"
+                    }, void 0, false, {
+                        fileName: "src/CardBack.js",
+                        lineNumber: 23,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "line-twelve"
+                    }, void 0, false, {
+                        fileName: "src/CardBack.js",
+                        lineNumber: 24,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/CardBack.js",
+                lineNumber: 12,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/CardBack.js",
+        lineNumber: 9,
+        columnNumber: 9
+    }, undefined);
+};
+_s(CardBack, "dHthd4HftYjAOECEpRasdAsqUfM=");
+_c = CardBack;
+exports.default = CardBack;
+var _c;
+$RefreshReg$(_c, "CardBack");
+
+  $parcel$ReactRefreshHelpers$2253.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["hcwwj","1xC6H","2kQhy"], "2kQhy", "parcelRequire5f43")
 
 //# sourceMappingURL=index.7271efb6.js.map
